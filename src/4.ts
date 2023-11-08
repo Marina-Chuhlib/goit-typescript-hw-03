@@ -16,13 +16,14 @@ class Person {
 
 abstract class House {
   private tenants: Person[] = [];
-  protected door: boolean;
+  protected door: boolean = false;
 
   constructor(protected key: Key) {}
 
   comeIn(person: Person): void {
     if (!this.door) {
       console.log("Door is close");
+      return;
     }
 
     this.tenants.push(person);
